@@ -1,0 +1,15 @@
+.allIcons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  white-space: normal;
+  width: 100px;
+}
+
+.icon {
+  display: flex;
+  margin: 2vh;
+  padding: 5vh;
+}
+
+

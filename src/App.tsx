@@ -1,9 +1,21 @@
 import './styles/App.css';
-import Footer from './components/footer.tsx';
-import ProductPage from './views/ProductPage.tsx';
+import ProductsPage from './views/ProductsPage.tsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SignUp from './views/SignUp.tsx';
+import SignIn from './views/SignIn.tsx';
 
 function App() {
-  return <ProductPage />;
+  return (
+    <>
+      <Router>
+        <Routes>
+          <Route path="/productsPage" element={<ProductsPage />} />
+          <Route path="/signUp" element={<SignUp />} />
+          <Route path="/signIn" element={<SignIn />} />
+        </Routes>
+      </Router>
+    </>
+  );
 }
 
 export default App;

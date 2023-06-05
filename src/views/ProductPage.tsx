@@ -14,15 +14,20 @@ const ProductPage = (props: Props) => {
         <div className={styles.image}>Image</div>
         <div className={styles.presentation}>
           <div className={styles.title}>
-            <h2>Croquettes</h2>
+            {products.map((product) => (
+              <p key="1"> {product.name} </p>
+            ))}
           </div>
           <div className={styles.description}>
-            {' '}
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-            voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-            occaecati cupiditate non provident
+            {products.map((product) => (
+              <p key={1}> {product.description} </p>
+            ))}
           </div>
-          <div className={styles.price}>10€</div>
+          <div className={styles.price}>
+            {products.map((product) => (
+              <p key={1}> {product.price} </p>
+            ))}
+          </div>
         </div>
       </div>
     </>
