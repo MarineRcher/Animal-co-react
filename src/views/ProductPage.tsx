@@ -1,7 +1,7 @@
 import React from 'react';
 import { products } from '../../data/products.ts';
 import styles from './../styles/productPage.module.css';
-import Header from '../components/header.tsx';
+
 
 type Props = {};
 
@@ -9,7 +9,7 @@ const ProductPage = (props: Props) => {
   return (
     <>
       {' '}
-      <Header />
+
       <div className={styles.corps}>
         <div className={styles.image}>Image</div>
         <div className={styles.presentation}>

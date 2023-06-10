@@ -1,0 +1,27 @@
+body{
+    background-color: #F4EBD6;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    box-shadow: 5px 5px 5px -5px #124660;
+    position: relative;
+    z-index: 9999;
+    background-color: #F4EBD6 ;
+}
+
+.logo {
+   width: 20vh;
+   height: 5vh;
+   margin-top: 2vh;
+   margin-right: 10vh;
+}
+
+.link{
+    margin: 2vh;
+    padding-top: 3vh;
+    align-items: center;
+  display: flex;
+  color: #124660
+}
