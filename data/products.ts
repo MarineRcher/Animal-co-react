@@ -1,17 +1,17 @@
-export type product = {
-  id: number;
-  name: string;
-  category: string;
+export type Product = {
+  id?: number;
+  productName: string;
+  category?: string;
   description: string;
   price: number;
   note: number;
 };
 
-export const products: product[] = [
+export const products: Product[] = [
   {
     id: 1,
     category: 'dog',
-    name: 'croquettes',
+    productName: 'croquettes',
     description: 'blablaba',
     price: 10,
     note: 4,
@@ -19,7 +19,7 @@ export const products: product[] = [
   {
     id: 2,
     category: 'dog',
-    name: 'balle',
+    productName: 'balle',
     description: 'hwefghwekfj',
     price: 7,
     note: 4.7,
@@ -27,7 +27,7 @@ export const products: product[] = [
   {
     id: 3,
     category: 'cat',
-    name: 'herbe à chat',
+    productName: 'herbe à chat',
     description: 'blablewfewffewwwaba',
     price: 4,
     note: 5,
@@ -35,7 +35,7 @@ export const products: product[] = [
   {
     id: 4,
     category: 'cat',
-    name: 'jouet',
+    productName: 'jouet',
     description: 'qqswdwdqqwwdqwblablaba',
     price: 23,
     note: 4.3,
@@ -43,7 +43,7 @@ export const products: product[] = [
   {
     id: 5,
     category: 'cat',
-    name: 'jouet',
+    productName: 'jouet',
     description: 'qqswdwdqqwwdqwblablaba',
     price: 23,
     note: 4.3,
@@ -51,7 +51,7 @@ export const products: product[] = [
   {
     id: 6,
     category: 'cat',
-    name: 'jouet',
+    productName: 'jouet',
     description: 'qqswdwdqqwwdqwblablaba',
     price: 23,
     note: 4.3,
@@ -59,7 +59,7 @@ export const products: product[] = [
   {
     id: 7,
     category: 'cat',
-    name: 'jouet',
+    productName: 'jouet',
     description: 'qqswdwdqqwwdqwblablaba',
     price: 23,
     note: 4.3,
@@ -67,7 +67,7 @@ export const products: product[] = [
   {
     id: 8,
     category: 'cat',
-    name: 'jouet',
+    productName: 'jouet',
     description: 'qqswdwdqqwwdqwblablaba',
     price: 23,
     note: 4.3,
@@ -75,7 +75,7 @@ export const products: product[] = [
   {
     id: 9,
     category: 'cat',
-    name: 'jouet',
+    productName: 'jouet',
     description: 'qqswdwdqqwwdqwblablaba',
     price: 23,
     note: 4.3,
@@ -83,7 +83,7 @@ export const products: product[] = [
   {
     id: 10,
     category: 'cat',
-    name: 'jouet',
+    productName: 'jouet',
     description: 'qqswdwdqqwwdqwblablaba',
     price: 23,
     note: 4.3,
@@ -91,7 +91,7 @@ export const products: product[] = [
   {
     id: 11,
     category: 'cat',
-    name: 'jouet',
+    productName: 'jouet',
     description: 'qqswdwdqqwwdqwblablaba',
     price: 23,
     note: 4.3,

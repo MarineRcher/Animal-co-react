@@ -37,9 +37,7 @@ export default function HomePage() {
         <div className={styles.titleProducts}>Produits</div>
         <div className={styles.categoryProduits}>Nos différentes catégories</div>
         <div className={styles.categories}>
-          <div className={styles.category}>
-
-          </div>
+         
           <div className={styles.category}>
             <img className={styles.imgCategories} src={dogFood}></img>
           </div>

@@ -5,9 +5,6 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    box-shadow: 5px 5px 5px -5px #124660;
-    position: relative;
-    z-index: 9999;
     background-color: #F4EBD6 ;
 }
 

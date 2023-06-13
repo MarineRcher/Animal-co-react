@@ -1,5 +1,6 @@
 import './styles/App.css';
-import ProductsPage from './views/ProductsPage.tsx';
+import DogFoodProductsPage from './views/DogFoodProductsPage.tsx';
+import CatAutresProductsPage from './views/CatAutresProductsPage.tsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignUp from './views/SignUp.tsx';
 import SignIn from './views/SignIn.tsx';
@@ -12,7 +13,8 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/productsPage" element={<ProductsPage />} />
+          <Route path="/Dog/Food" element={<DogFoodProductsPage />} />
+          <Route path="/Cat/Others" element={<CatAutresProductsPage />} />
           <Route path="/productPage" element={<ProductPage />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/signIn" element={<SignIn />} />

@@ -1,15 +1,9 @@
-.card {
-  border: solid black 1px;
-  margin: 2vh;
-  padding: 5vh;
-  width: 15%;
-  
+.card{
+margin: 1vh;
+width: 20vh;
 }
 
-.image {
-  display: flex;
-  justify-content: center;
-  border: solid black 1px;
-  width: 80%;
-  height: 50%;
+.image{
+width: 100%;
 }
+

@@ -1,20 +1,21 @@
-import React from 'react';
-import styles from '../styles/cardProduct.module.css';
+import styles from './../styles/cardProduct.module.css';
+import dogFood from './../assets/dog/food/food.jpg';
+
+import { Product } from '../../data/products';
 
 type Props = {
-  name: string;
-  price: number;
-  note: number;
+  product: Product;
 };
 
-function CardProduct({ name, price, note }: Props) {
+function CardProduct({ product }: Props) {
   return (
     <div className={styles.card}>
-      <div className={styles.image}>Image</div>
+      <img src={dogFood} className={styles.image} />
 
-      <h3>{name}</h3>
-      <div> {note}/5 </div>
-      <div> {price}€</div>
+      <h3>{product.productName}</h3>
+      <div> {product.note}/5 </div>
+      <div> {product.price}€</div>
+      <div> {product.description}</div>
     </div>
   );
 }
