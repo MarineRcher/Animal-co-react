@@ -5,11 +5,11 @@ import Nav from '../components/nav.tsx';
 import dogCat from './../assets/dogandcat.jpg';
 import { Product } from '../components/cardProduct.tsx';
 
-const DogFoodProductsPage = () => {
+const CatFoodProductsPage = () => {
   const [products, setProduct] = useState<Product[]>([]);
 
   const fetchProductData = async () => {
-    const response = await fetch('http://localhost:3003/product/dog/food');
+    const response = await fetch('http://localhost:3003/product/cat/food');
     const value = await response.json();
     setProduct(value.post);
     console.log(value);
@@ -35,4 +35,4 @@ const DogFoodProductsPage = () => {
   );
 };
 
-export default DogFoodProductsPage;
+export default CatFoodProductsPage;

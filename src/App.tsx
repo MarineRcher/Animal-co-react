@@ -1,5 +1,7 @@
 import './styles/App.css';
 import DogFoodProductsPage from './views/DogFoodProductsPage.tsx';
+import DogAutresProductsPage from './views/DogAutresProductsPage.tsx';
+import CatFoodProductsPage from './views/CatFoodProductsPage.tsx';
 import CatAutresProductsPage from './views/CatAutresProductsPage.tsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignUp from './views/SignUp.tsx';
@@ -14,6 +16,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/Dog/Food" element={<DogFoodProductsPage />} />
+          <Route path="/Dog/Others" element={<DogAutresProductsPage />} />
+          <Route path="/Cat/Food" element={<CatFoodProductsPage />} />
           <Route path="/Cat/Others" element={<CatAutresProductsPage />} />
           <Route path="/productPage" element={<ProductPage />} />
           <Route path="/signUp" element={<SignUp />} />

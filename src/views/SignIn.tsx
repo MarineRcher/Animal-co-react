@@ -9,7 +9,7 @@ type Account = {
 };
 
 // Composant
-export default function SignUp() {
+export default function SignIn() {
   const [account, setAccount] = useState<Account>({
     name: '',
     lastName: '',
@@ -23,7 +23,7 @@ export default function SignUp() {
   }
 
   return (
-    <div className={styles.signUp}>
+    <div className={styles.signIn}>
       <h1 className={styles.title}>Connexion</h1>
       <form onSubmit={handleSubmit}>
        
