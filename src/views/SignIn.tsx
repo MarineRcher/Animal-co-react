@@ -1,25 +1,37 @@
 import styles from './../styles/SignIn.module.css';
 import { useState, FormEvent } from 'react';
 
-type Account = {
-  name: string;
-  lastName: string;
+export interface User {
   email: string;
   password: string;
-};
+}
 
 // Composant
-export default function SignIn() {
-  const [account, setAccount] = useState<Account>({
-    name: '',
-    lastName: '',
+function SignIn() {
+  const [user, setUser] = useState<User>({
     email: '',
     password: '',
   });
-
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log('Submitted details:', account);
+    console.log('Submitted details:', user);
+    
+    // Send the form data to the server
+    fetch('http://localhost:3003/auth/login', {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Handle the response from the server
+        console.log('Response:', data);
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+      });
   }
 
   return (
@@ -27,13 +39,13 @@ export default function SignIn() {
       <h1 className={styles.title}>Connexion</h1>
       <form onSubmit={handleSubmit}>
        
-        <div className={account.email}>
+        <div className={styles.email}>
           <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
-            value={account.email}
-            onChange={(e) => setAccount({ ...account, email: e.target.value })}
+            value={user.email}
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
           />
         </div>
         <div className={styles.password}>
@@ -41,8 +53,8 @@ export default function SignIn() {
           <input
             id="password"
             type="password"
-            value={account.password}
-            onChange={(e) => setAccount({ ...account, password: e.target.value })}
+            value={user.password}
+            onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
         </div>
         
@@ -55,3 +67,6 @@ export default function SignIn() {
     </div>
   );
 }
+
+
+export default SignIn;

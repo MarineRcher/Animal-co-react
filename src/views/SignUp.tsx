@@ -1,5 +1,5 @@
 import styles from './../styles/SignUp.module.css';
-import { useState, FormEvent, useEffect } from 'react';
+import { useState, FormEvent } from 'react';
 
 export interface User {
   name: string;
