@@ -13,6 +13,9 @@ form {
   margin-top: 8vh;
   border: 1px solid #f1f1f1;
   background: #fff;
+  display: flex;
+  flex-direction: column;
+  
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
@@ -52,4 +55,10 @@ button[type='submit']:hover {
   background-color: white;
   color: #222d41;
   border: 1px solid #222d41;
+}
+
+.signUp{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }

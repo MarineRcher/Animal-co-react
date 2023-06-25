@@ -1,26 +1,45 @@
 import styles from './../styles/SignUp.module.css';
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 
-type Account = {
+export interface User {
   name: string;
   lastName: string;
+  username: string;
   email: string;
   password: string;
-};
+}
 
-// Composant
-export default function SignUp() {
-  const [account, setAccount] = useState<Account>({
+function SignUp() {
+  const [user, setUser] = useState<User>({
     name: '',
     lastName: '',
+    username: '',
     email: '',
     password: '',
   });
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    console.log('Submitted details:', account);
+    console.log('Submitted details:', user);
+    
+    // Send the form data to the server
+    fetch('http://localhost:3003/auth/signup', {
+      method: 'PUT',
+      body: JSON.stringify(user),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        // Handle the response from the server
+        console.log('Response:', data);
+      })
+      .catch(error => {
+        console.error('Error submitting form:', error);
+      });
   }
+
 
   return (
     <div className={styles.signUp}>
@@ -29,48 +48,49 @@ export default function SignUp() {
         <div className={styles.name}>
           <label htmlFor="name">Prénom</label>
           <input
-            type="name"
+            type="text"
             id="name"
-            value={account.name}
-            onChange={(e) => setAccount({ ...account, name: e.target.value })}
+            value={user.name}
+            onChange={(e) => setUser({ ...user, name: e.target.value })}
           />
         </div>
         <div className={styles.lastName}>
-          <label htmlFor="name">Nom de famille</label>
+          <label htmlFor="lastName">Nom de famille</label>
           <input
-            type="lastName"
+            type="test"
             id="lastName"
-            value={account.lastName}
-            onChange={(e) => setAccount({ ...account, lastName: e.target.value })}
+            value={user.lastName}
+            onChange={(e) => setUser({ ...user, lastName: e.target.value })}
           />
         </div>
-        <div className={account.email}>
+        <div className={styles.email}>
           <label htmlFor="email">Email</label>
           <input
             type="email"
             id="email"
-            value={account.email}
-            onChange={(e) => setAccount({ ...account, email: e.target.value })}
+            value={user.email}
+            onChange={(e) => setUser({ ...user, email: e.target.value })}
+          />
+        </div>
+        <div className={styles.username}>
+          <label htmlFor="username">Username</label>
+          <input
+            type="username"
+            id="username"
+            value={user.username}
+            onChange={(e) => setUser({ ...user, username: e.target.value })}
           />
         </div>
         <div className={styles.password}>
-          <label htmlFor="reason">Mot de passe</label>
+          <label htmlFor="password">Mot de passe</label>
           <input
             id="password"
             type="password"
-            value={account.password}
-            onChange={(e) => setAccount({ ...account, password: e.target.value })}
+            value={user.password}
+            onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
         </div>
-        <div className={styles.password}>
-          <label htmlFor="reason">Confirmez le mot de passe</label>
-          <input
-            id="password"
-            type="password"
-            value={account.password}
-            onChange={(e) => setAccount({ ...account, password: e.target.value })}
-          />
-        </div>
+        
         <div>
           <button type="submit" className={styles.submit}>
             Inscription
@@ -80,3 +100,5 @@ export default function SignUp() {
     </div>
   );
 }
+
+export default SignUp;

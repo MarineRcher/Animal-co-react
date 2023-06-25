@@ -36,3 +36,4 @@ const CatAutresProductsPage = () => {
 };
 
 export default CatAutresProductsPage;
+
