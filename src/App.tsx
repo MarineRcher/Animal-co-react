@@ -8,6 +8,7 @@ import SignUp from './views/SignUp.tsx';
 import SignIn from './views/SignIn.tsx';
 import HomePage from './views/HomePage.tsx';
 import ProductPage from './views/ProductPage.tsx';
+import Cart from './views/cart.tsx';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/Cat/Food" element={<CatFoodProductsPage />} />
           <Route path="/Cat/Others" element={<CatAutresProductsPage />} />
           <Route path="/productPage" element={<ProductPage />} />
+          <Route path="/shopCart" element={<Cart />} />
           <Route path="/signUp" element={<SignUp />} />
           <Route path="/signIn" element={<SignIn />} />
         </Routes>

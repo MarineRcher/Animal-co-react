@@ -1,3 +1,52 @@
-.body{
+body {
   background-color: #F7F1EA;
+}
+.dogandcat {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1vh;
+  padding: 0;
+  margin: 0;
+}
+.presentation {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5vh;
+}
+
+.boxPresntation {
+  border: solid 1.5px #1b9476;
+  border-radius: 10px;
+  margin: 0.5vh;
+  padding: 1vh;
+  height: 30vh;
+  padding-top: 3vh;
+  align-items: center;
+}
+
+.titleProducts {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.categoryProduits {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imgCategories {
+  max-width: 25vh;
+  max-height: 35vh;
+  border-radius: 5px;
+  margin: 1vh;
 }

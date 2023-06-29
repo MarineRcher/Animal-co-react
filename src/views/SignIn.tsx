@@ -1,5 +1,7 @@
 import styles from './../styles/SignIn.module.css';
 import { useState, FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 export interface User {
   email: string;
@@ -12,10 +14,11 @@ function SignIn() {
     email: '',
     password: '',
   });
+  const navigate = useNavigate();
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     console.log('Submitted details:', user);
-    
+
     // Send the form data to the server
     fetch('http://localhost:3003/auth/login', {
       method: 'POST',
@@ -28,6 +31,8 @@ function SignIn() {
       .then(data => {
         // Handle the response from the server
         console.log('Response:', data);
+        localStorage.setItem('JWT', data.token);
+        navigate('/Cat/Others');
       })
       .catch(error => {
         console.error('Error submitting form:', error);
@@ -38,7 +43,6 @@ function SignIn() {
     <div className={styles.signIn}>
       <h1 className={styles.title}>Connexion</h1>
       <form onSubmit={handleSubmit}>
-       
         <div className={styles.email}>
           <label htmlFor="email">Email</label>
           <input
@@ -57,7 +61,6 @@ function SignIn() {
             onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
         </div>
-        
         <div>
           <button type="submit" className={styles.submit}>
             Connexion
@@ -67,6 +70,5 @@ function SignIn() {
     </div>
   );
 }
-
 
 export default SignIn;
