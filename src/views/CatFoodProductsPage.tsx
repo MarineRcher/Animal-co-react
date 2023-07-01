@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import styles from './../styles/productsPage.module.css';
-import CardProduct from '../components/cardProduct.tsx';
-import Nav from '../components/nav.tsx';
+import CardProduct from './../components/CardProduct.tsx';
+
 import dogCat from './../assets/dogandcat.jpg';
-import { Product } from '../components/cardProduct.tsx';
+import { Product } from './../components/CardProduct.tsx';
 
 const CatFoodProductsPage = () => {
   const [products, setProduct] = useState<Product[]>([]);
@@ -20,7 +20,7 @@ const CatFoodProductsPage = () => {
   }, []);
   return (
     <>
-      <Nav />
+    
 
       <img className={styles.dogCat} src={dogCat} />
       <div className={styles.allIcons}>

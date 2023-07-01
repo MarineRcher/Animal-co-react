@@ -1,19 +1,22 @@
+import React from 'react';
 import './styles/App.css';
-import DogFoodProductsPage from './views/DogFoodProductsPage.tsx';
-import DogAutresProductsPage from './views/DogAutresProductsPage.tsx';
-import CatFoodProductsPage from './views/CatFoodProductsPage.tsx';
-import CatAutresProductsPage from './views/CatAutresProductsPage.tsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SignUp from './views/SignUp.tsx';
-import SignIn from './views/SignIn.tsx';
-import HomePage from './views/HomePage.tsx';
-import ProductPage from './views/ProductPage.tsx';
-import Cart from './views/cart.tsx';
+import Nav from './components/nav';
+import DogFoodProductsPage from './views/DogFoodProductsPage';
+import DogAutresProductsPage from './views/DogAutresProductsPage';
+import CatFoodProductsPage from './views/CatFoodProductsPage';
+import CatAutresProductsPage from './views/CatAutresProductsPage';
+import SignUp from './views/SignUp';
+import SignIn from './views/SignIn';
+import HomePage from './views/HomePage';
+import ProductPage from './views/ProductPage';
+import Cart from './views/cart';
 
 function App() {
   return (
     <>
-      <Router>
+      <Router> 
+        <Nav />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/Dog/Food" element={<DogFoodProductsPage />} />

@@ -12,7 +12,7 @@ import jouetCat from './../assets/cat/autres/jouet.jpg';
 export default function HomePage() {
   return (
     <>
-      <Nav />
+    
       <img className={styles.dogandcat} src={dogandcat} />
       <div className={styles.presentation}>
         <div className={styles.boxPresntation}>
